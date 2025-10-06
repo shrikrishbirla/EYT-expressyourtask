@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.application {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 50vw;
+  height: 90vh;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.application h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffcb74;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e2a3a;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.input:hover {
+  background: #2a3c54;
+}
+
+.input input[type="text"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.input input[type="button"] {
+  background: #ffcb74;
+  border: none;
+  outline: none;
+  color: #1e1e2f;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input input[type="button"]:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input input[type="button"]:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+}
+
+.input input[type="text"]::placeholder {
+  color: #ccc;
+  opacity: 0.7;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+.list::-webkit-scrollbar-thumb {
+  background: #ffcb74;
+  border-radius: 4px;
+}
+.list::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+
+.list .task {
+  background: #2a3c54;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list .task:hover {
+  background: #364d6b;
+}
+
+.list .task span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.list .task .delete {
+  background: #e74c3c;
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.list .task .done {
+  background: #64e73c;
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.list .task .undone {
+  background: #ccc;
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.list .task .delete:hover {
+  background: #c0392b;
+}
+
+.list .task .done:hover {
+  background: #4bc02b;
+}
+
+.list .task .undone:hover {
+  background: #666;
+  color: #ccc;
+}
+
+.list .task button:focus {
+  outline: 2px solid #ffcb74;
+}
